@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     const chat    = `chat_id=${process.env.CHAT_ID}`;
     
     let message = req.query.msg;
-    let link    = `${telegram}/${bot}/senMessage?${chat}&text=${message}`;
+    let link    = `${telegram}/${bot}/sendMessage?${chat}&text=${message}`;
 
     https.get(link, (response) => {
         res.json({

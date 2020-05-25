@@ -5,9 +5,10 @@
     "author": "msweeneydev",
     "private": true,
     "scripts": {
-        "dev": "nuxt",
         "build": "nuxt generate",
-        "start": "nuxt start"
+        "dev": "nuxt -H 0.0.0.0",
+        "prod": "nuxt build",
+        "start": "nuxt start -H 0.0.0.0"
     },
     "dependencies": {
         "nuxt": "^2.0.0"

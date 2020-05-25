@@ -1,14 +1,14 @@
 <template>
-    <div class="container">
+    <div :class="$style.container">
         <div>
             <logo/>
-            <h1 class="title">
+            <h1 :class="$style.title">
                 <p>CyberEdu</p>
             </h1>
-            <h2 class="subtitle">
+            <h2 :class="$style.subtitle">
                 <p>My astonishing Nuxt.js project</p>
             </h2>
-            <div class="links">
+            <div :class="$style.links">
                 <a class="button--green" href="https://nuxtjs.org/" target="_blank">
                     <p>Documentation</p>
                 </a>
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" module>
 .container {
     margin: 0 auto;
     min-height: 100vh;

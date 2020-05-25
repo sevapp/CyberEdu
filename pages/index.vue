@@ -26,6 +26,21 @@ import Logo from '~/components/Logo.vue'
 export default {
     components: {
         Logo
+    },
+
+    data() {
+        return {
+            msg: "Hello, from vue!",
+        };
+    },
+
+    mounted() {
+        console.log(process.env.BOT_URL);
+
+        let oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", () => {});
+        oReq.open("POST", `${process.env.BOT_URL}?msg=${this.msg}`);
+        oReq.send();
     }
 }
 </script>

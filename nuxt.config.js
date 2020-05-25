@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 export default {
     mode: 'universal',
 
     env: {
-        BOT_API_URL: process.env.BOT_URL,
+        BOT_URL: process.env.BOT_URL,
     },
     /*
      ** Headers of the page
@@ -45,7 +47,9 @@ export default {
     /*
      ** Nuxt.js modules
      */
-    modules: [],
+    modules: [
+        '@nuxtjs/dotenv',
+    ],
     /*
      ** Build configuration
      */
@@ -53,6 +57,8 @@ export default {
         /*
          ** You can extend webpack config here
          */
-        extend(config, ctx) {},
+        extend(config, ctx) {
+            
+        },
     },
 };

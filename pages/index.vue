@@ -30,7 +30,7 @@ export default {
 
     data() {
         return {
-            msg: "Hello, from vue!",
+            msg: "Hello, from CyberEdu.xyz",
         };
     },
 

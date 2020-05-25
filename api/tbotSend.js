@@ -9,7 +9,7 @@ module.exports = (req, res) => {
 
     https.get(`${telegram}/${bot}/senMessage?${chat}&text=${message}`, (response) => {
         res.json({
-            result: JSON.parse(response),
-        })
+            result: 'Ok',
+        });
     });
 };

@@ -54,7 +54,7 @@ export default {
 
     recaptcha: {
         hideBadge: false,                   // Hide badge element (v3 & v2 via size=invisible)
-        language: 'ru',                     // Recaptcha language (v2)
+        language: 'en',                     // Recaptcha language (v2)
         siteKey: process.env.CAPCHA_PUB,    // Site key for requests
         version: 3,                         // Version
         size: 'compact'                     // Size: 'compact', 'normal', 'invisible' (v2)

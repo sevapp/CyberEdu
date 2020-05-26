@@ -30,14 +30,14 @@ export default {
         return {
             name:   "Vsevolod",
             phone:  "+7 (999) 972-28-58",
-            msg:    "Hello, from CyberEdu.xyz",
+            msg:    "Хочу изучить язык Java!",
             token:  null,
         };
     },
 
     mounted() {
-        // ...
         console.log(process.env.CAPCHA_PUB);
+        console.log(process.env.BOT_URL);
     },
 
     methods: {

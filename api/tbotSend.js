@@ -16,7 +16,7 @@ module.exports = (req, res) => {
         тел. ${phone}\n
     `;
 
-    let link = `${tAPI}/${botToken}/sendMessage?chatID}&text=${text}`;
+    let link = `${tAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
     https.get(link, (response) => {
         res.json({

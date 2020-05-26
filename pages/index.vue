@@ -9,13 +9,11 @@
                 <p>My astonishing Nuxt.js project</p>
             </h2>
             <div :class="$style.links">
-                <a class="button--green" href="https://nuxtjs.org/" target="_blank">
-                    <p>Documentation</p>
-                </a>
-                <a class="button--grey" href="https://github.com/nuxt/nuxt.js" target="_blank">
-                    <p>GitHub</p>
+                <a class="button--grey" @click="this.sendData" target="_blank">
+                    <p>Send</p>
                 </a>
             </div>
+            <br>
         </div>
     </div>
 </template>
@@ -30,30 +28,50 @@ export default {
 
     data() {
         return {
-            msg: "Hello, from CyberEdu.xyz",
+            name:   "Vsevolod",
+            phone:  "+7 (999) 972-28-58",
+            msg:    "Hello, from CyberEdu.xyz",
+            token:  null,
         };
     },
 
     mounted() {
-        console.log(process.env.BOT_URL);
+        // ...
+    },
 
-        let oReq = new XMLHttpRequest();
-        oReq.addEventListener("load", () => {});
-        oReq.open("POST", `${process.env.BOT_URL}?msg=${this.msg}`);
-        oReq.send();
-    }
+    methods: {
+        async sendData() {
+
+            await this.$recaptcha.init();
+
+            try {
+                this.token = await this.$recaptcha.execute('login');
+                console.log('ReCaptcha token:', this.token);
+
+                let xhr = new XMLHttpRequest();
+                // xhr.addEventListener("load", () => {});
+                xhr.open("POST", `${process.env.BOT_URL}?name=${this.name}&phone=${this.phone}&msg=${this.msg}&token=${this.token}`);
+                xhr.send();
+
+            } catch (error) {
+                console.log('Login error:', error);
+            }
+        }
+    },
 }
 </script>
 
 <style lang="scss" module>
 .container {
     margin: 0 auto;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+
 .title {
     font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: block;
@@ -62,6 +80,7 @@ export default {
     color: #35495e;
     letter-spacing: 1px;
 }
+
 .subtitle {
     font-weight: 300;
     font-size: 42px;
@@ -69,6 +88,7 @@ export default {
     word-spacing: 5px;
     padding-bottom: 15px;
 }
+
 .links {
     padding-top: 15px;
 }

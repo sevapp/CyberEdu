@@ -49,7 +49,16 @@ export default {
      */
     modules: [
         '@nuxtjs/dotenv',
+        '@nuxtjs/recaptcha',
     ],
+
+    recaptcha: {
+        hideBadge: false,                   // Hide badge element (v3 & v2 via size=invisible)
+        language: 'ru',                     // Recaptcha language (v2)
+        siteKey: process.env.CAPCHA_PUB,    // Site key for requests
+        version: 3,                         // Version
+        size: 'compact'                     // Size: 'compact', 'normal', 'invisible' (v2)
+    },
     /*
      ** Build configuration
      */
@@ -58,7 +67,7 @@ export default {
          ** You can extend webpack config here
          */
         extend(config, ctx) {
-            
+
         },
     },
 };

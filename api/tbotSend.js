@@ -10,7 +10,7 @@ module.exports = (req, res) => {
     let phone = req.query.phone || 'null';
     let msg = req.query.msg || 'null';
 
-    let text = `Новая заявка от ${name}:%0A${msg}%0AТелефон: %2b${phone}`;
+    let text = `Новая заявка от ${name}:%0A${msg}%0AТелефон: ${phone}`;
     let link = `${tAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
     
     https.get(link, (response) => {

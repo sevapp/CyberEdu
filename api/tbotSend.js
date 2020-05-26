@@ -10,9 +10,9 @@ module.exports = (req, res) => {
     let phone = req.query.phone.replace('+', '%2b') || 'null';
     let msg = req.query.msg || 'null';
 
-    let text = `Новая заявка от ${name}:%0A%0A${msg}%0A%0Aтелефон ${phone}`;
+    let text = `Новая заявка от ${name}:%0A${msg}%0AТелефон: ${phone}`;
     let link = `${tAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
-
+    
     https.get(link, (response) => {
         res.json({
             result: link,

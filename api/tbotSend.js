@@ -7,11 +7,10 @@ const chatID = `chat_id=${process.env.CHAT_ID}`;
 module.exports = (req, res) => {
     let capchaToken = req.query.token || null;
     let name = req.query.name || 'null';
-    let phone = req.query.phone || 'null';
+    let phone = req.query.phone.replace('+', '%2b') || 'null';
     let msg = req.query.msg || 'null';
 
-    let text = `Новая заявка от ${name}:.%0A${msg}.%0Aтел. ${phone}`.replace("+", "%2b");
-
+    let text = `Новая заявка от ${name}:%0A%0A${msg}%0A%0Aтелефон ${phone}`;
     let link = `${tAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
     https.get(link, (response) => {

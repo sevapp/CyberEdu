@@ -29,7 +29,7 @@ export default {
     data() {
         return {
             name:   "Vsevolod",
-            phone:  "+7 (999) 972-28-58",
+            phone:  "+79999722858",
             msg:    "Хочу изучить язык Java!",
             token:  null,
         };

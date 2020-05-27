@@ -18,7 +18,9 @@ module.exports = (req, res) => {
     let botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
     https.get(caphcaSendLink, (response) => {
-        res.json(response);
-        https.get(botSendLink, (response) => {});
+        res.json({res: response});
+        https.get(botSendLink, () => {
+            
+        });
     });
 };

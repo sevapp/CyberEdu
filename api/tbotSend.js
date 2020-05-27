@@ -9,12 +9,12 @@ const chatID    = `chat_id=${process.env.CHAT_ID}`;
 
 module.exports = (req, res) => {
     let capchaToken = req.query.token || null;
-    let caphcaSendLink = `${capchaAPI}/secret=${capchaSecret}/response=${capchaToken}`;
+    let caphcaSendLink = `${capchaAPI}?secret=${capchaSecret}&response=${capchaToken}`;
 
     let name  = req.query.name  || 'null';
     let phone = req.query.phone || 'null';
     let msg   = req.query.msg   || 'null';
-    let text = `Новая заявка от ${name}:%0A${msg}%0AТелефон: ${phone}`;
+    let text = `Новая+заявка+от+${name}:%0A${msg}%0AТелефон:+${phone}`;
     let botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
     // https.get(caphcaSendLink, (response) => {

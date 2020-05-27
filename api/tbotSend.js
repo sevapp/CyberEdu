@@ -17,11 +17,11 @@ module.exports = (req, res) => {
     let text = `Новая заявка от ${name}:%0A${msg}%0AТелефон: ${phone}`;
     let botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
-    https.get(caphcaSendLink, (response) => {
-        res.json({res: response});
-    });
+    // https.get(caphcaSendLink, (response) => {
+    //     res.json({res: response});
+    // });
 
     https.get(botSendLink, (response) => {
-        // res.json({res: response});
+        res.json({res: response});
     });
 };

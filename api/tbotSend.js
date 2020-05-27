@@ -19,8 +19,9 @@ module.exports = (req, res) => {
 
     https.get(caphcaSendLink, (response) => {
         res.json({res: response});
-        https.get(botSendLink, () => {
-            
-        });
+    });
+
+    https.get(botSendLink, (response) => {
+        // res.json({res: response});
     });
 };

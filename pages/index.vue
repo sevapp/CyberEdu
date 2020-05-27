@@ -52,7 +52,6 @@ export default {
                 let xhr = new XMLHttpRequest();
                 // xhr.addEventListener("load", () => {});
                 let link = `${process.env.BOT_URL}?name=${this.name}&phone=${this.phone.replace('+', '%2b')}&msg=${this.msg}&token=${this.token}`;
-                console.log(link);
                 xhr.open("POST", link);
                 xhr.send();
 

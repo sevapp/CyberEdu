@@ -22,6 +22,6 @@ module.exports = (req, res) => {
     // });
 
     https.get(botSendLink, (response) => {
-        res.json({res: response});
+        res.json(response);
     });
 };

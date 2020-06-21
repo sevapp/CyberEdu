@@ -6,6 +6,7 @@ export default {
     env: {
         BOT_URL: process.env.BOT_URL,
     },
+
     /*
      ** Headers of the page
      */
@@ -32,24 +33,41 @@ export default {
             { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
         ],
     },
+
     /*
      ** Customize the progress-bar color
      */
     loading: { color: '#fff' },
+
     /*
      ** Global CSS
      */
-    css: [],
+    css: [
+        '@/assets/css/normalize.css',
+    ],
+
     /*
      ** Plugins to load before mounting the App
      */
     plugins: [],
+
     /*
      ** Nuxt.js modules
      */
     modules: [
         '@nuxtjs/dotenv',
         '@nuxtjs/recaptcha',
+        [
+            '@nuxtjs/yandex-metrika',
+            {
+                id: 'XXXXXX',
+                webvisor: true,
+                // clickmap:true,
+                // useCDN:false,
+                // trackLinks:true,
+                // accurateTrackBounce:true,
+            }
+        ],
     ],
 
     recaptcha: {
@@ -59,6 +77,7 @@ export default {
         version: 3,                         // Version
         size: 'compact'                     // Size: 'compact', 'normal', 'invisible' (v2)
     },
+
     /*
      ** Build configuration
      */
@@ -67,7 +86,7 @@ export default {
          ** You can extend webpack config here
          */
         extend(config, ctx) {
-
+            
         },
     },
 };

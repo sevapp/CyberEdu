@@ -6,14 +6,15 @@
     "private": true,
     "scripts": {
         "build": "nuxt generate",
-        "dev": "nuxt -H 0.0.0.0",
+        "dev": "nuxt -H localhost",
         "prod": "nuxt build",
         "start": "nuxt start -H 0.0.0.0"
     },
     "dependencies": {
-        "nuxt": "^2.0.0",
         "@nuxtjs/dotenv": "^1.4.1",
-        "@nuxtjs/recaptcha": "^0.6.2"
+        "@nuxtjs/recaptcha": "^0.6.2",
+        "@nuxtjs/yandex-metrika": "^1.0.3",
+        "nuxt": "^2.0.0"
     },
     "devDependencies": {
         "node-sass": "^4.14.1",

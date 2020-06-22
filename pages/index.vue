@@ -30,7 +30,6 @@ export default {
         return {
             name:   "Vsevolod",
             phone:  "9999722858",
-            msg:    "Хочу+изучить+язык+Java!",
             token:  null,
         };
     },
@@ -51,7 +50,7 @@ export default {
 
                 let xhr = new XMLHttpRequest();
                 // xhr.addEventListener("load", () => {});
-                let link = `${process.env.BOT_URL}?name=${encodeURI(this.name)}&phone=${encodeURI(this.phone)}&msg=${encodeURI(this.msg)}&token=${this.token}`;
+                let link = `${process.env.BOT_URL}?name=${encodeURI(this.name)}&phone=${encodeURI(this.phone)}&token=${this.token}`;
                 console.log(link);
                 xhr.open("POST", link);
                 xhr.send();

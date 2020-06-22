@@ -13,13 +13,14 @@ module.exports = (req, res) => {
 
     let name  = req.query.name  || 'null';
     let phone = req.query.phone || 'null';
-    let msg   = req.query.msg   || 'null';
-    let text = encodeURIComponent(`Новая заявка от ${name}:\n${msg}\nТелефон: +7${phone}`);
+    let text = encodeURIComponent(`Новое сообщение от ${name}:\nТелефон: +7${phone}`);
     let botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
     // https.get(caphcaSendLink, (response) => {
     //     res.json({res: response});
     // });
+
+    console.log(botSendLink);
 
     https.get(botSendLink, (response) => {
         res.json({toBot: botSendLink, toCapcha: caphcaSendLink});

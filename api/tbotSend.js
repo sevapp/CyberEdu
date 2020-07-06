@@ -1,28 +1,40 @@
 const https = require('https');
 
-const capchaAPI   = 'https://www.google.com/recaptcha/api/siteverify';
-const capchaSecret = `bot${process.env.CAPCHA_PRT}`;
+module.exports = (req, res) => 
+{
+  const capchaAPI    = 'https://www.google.com/recaptcha/api/siteverify';
+  const capchaSecret = process.env.CAPCHA_PRT;
 
-const botAPI    = 'https://api.telegram.org';
-const botToken  = `bot${process.env.BOT_KEY}`;
-const chatID    = `chat_id=${process.env.CHAT_ID}`;
+  const botAPI    = 'https://api.telegram.org';
+  const botToken  = `bot${process.env.BOT_KEY}`;
+  const chatID    = `chat_id=${process.env.CHAT_ID}`;
 
-module.exports = (req, res) => { 
-    let capchaToken = req.query.token || null;
-    let caphcaSendLink = `${capchaAPI}?secret=${capchaSecret}&response=${capchaToken}`;
+  const capchaToken = req.query.token || null;
+  const caphcaSendLink = `${capchaAPI}?secret=${capchaSecret}&response=${capchaToken}`;
 
-    let name  = req.query.name  || 'null';
-    let phone = req.query.phone || 'null';
-    let text = encodeURIComponent(`Новое сообщение от ${name}:\nТелефон: +7${phone}`);
-    let botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
+  const name  = req.query.name  || 'null';
+  const phone = req.query.phone || 'null';
+  const text = encodeURIComponent(`Новое сообщение от ${name}:\nТелефон: +7${phone}`);
+  const botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
-    // https.get(caphcaSendLink, (response) => {
-    //     res.json({res: response});
-    // });
+  https.get(caphcaSendLink, response => 
+    {
+      let body = '';
 
-    console.log(botSendLink);
+      response.on('data', chunk => 
+          body += chunk
+      );
 
-    https.get(botSendLink, (response) => {
-        res.json({toBot: botSendLink, toCapcha: caphcaSendLink});
-    });
+      response.on('end', () => {
+        const responseJSON = JSON.parse(body);
+
+        if (responseJSON.success) 
+        {
+          https.get(botSendLink, () => 
+            res.json({status: 'Ok'})
+          );
+        }
+      });
+    }
+  );
 };

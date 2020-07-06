@@ -7,6 +7,11 @@ export default {
         BOT_URL: process.env.BOT_URL,
     },
 
+    target: 'static',
+
+    components: true,
+    telemetry: false,
+
     /*
      ** Headers of the page
      */
@@ -15,7 +20,7 @@ export default {
             lang: 'ru',
         },
 
-        title: 'CyberEdu',
+        title: process.env.npm_package_name,
         
         meta: [
             { charset: 'utf-8' },
@@ -62,10 +67,10 @@ export default {
             {
                 id: 'XXXXXX',
                 webvisor: true,
-                // clickmap:true,
-                // useCDN:false,
-                // trackLinks:true,
-                // accurateTrackBounce:true,
+                // clickmap: true,
+                // useCDN: false,
+                // trackLinks: true,
+                // accurateTrackBounce: true,
             }
         ],
     ],

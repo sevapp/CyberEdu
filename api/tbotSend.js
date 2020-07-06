@@ -14,7 +14,7 @@ module.exports = (req, res) =>
 
   const name  = req.query.name  || 'null';
   const phone = req.query.phone || 'null';
-  const text = encodeURIComponent(`Новое сообщение от ${name}:\nТелефон: +7${phone}`);
+  const text = encodeURIComponent(`Новое сообщение от ${name}:\nТелефон: ${phone}`);
   const botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
   https.get(caphcaSendLink, response => 

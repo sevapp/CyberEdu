@@ -2,47 +2,34 @@
 	<div :class="$style.container">
 		<div>
 
-      <div class="columns bbb">
-        <div class="column bbb">
-          First column
+      <div class="box" :class="$style.form">
+        <h3 class="subtitle">Форма обратной связи</h3>
+
+        <div :class="$style.socials">
+          <b-button type="is-info" @click="openLink('https://t.me/sevapp')">Telegram</b-button>
+          <b-button type="is-primary">Discord</b-button>
         </div>
-        <div class="column bbb">
-          Second column
-        </div>
-        <div class="column bbb">
-          Third column
-        </div>
-        <div class="column bbb">
-          Fourth column
-        </div>
-      </div>
 
-			<logo />
-
-			<h1 :class="$style.title">
-				<p>CyberEdu</p>
-			</h1>
-
-			<h2 :class="$style.subtitle">
-				<p>My astonishing Nuxt.js project</p>
-			</h2>
-
-			<div :class="$style.links">
-				<a class="button--grey" @click="this.sendData" target="_blank">
-					<p>Send</p>
-				</a>
-			</div>
-			<br>
-
-      <h3 class="subtitle">With Material Design Icons</h3>
-      <bField>
-          <bInput placeholder="Search..."
+        <b-field>
+          <b-input placeholder="Имя"
             type="search"
-            icon="magnify"
+            icon="account"
+            v-model="name"
             icon-clickable>
-          </bInput>
-      </bField>
+          </b-input>
+        </b-field>
 
+        <b-field>
+          <b-input placeholder="Телефон"
+            type="search"
+            icon="phone"
+            v-model="phone"
+            icon-clickable>
+          </b-input>
+        </b-field>
+
+        <b-button type="is-success" @click="sendData">Отправить</b-button>
+      </div>
 		</div>
 	</div>
 </template>
@@ -54,7 +41,7 @@ export default {
 	data() {
 		return {
 			name:   "Vsevolod",
-			phone:  "9999722858",
+			phone:  "+7999722858",
 			token:  null,
 		};
 	},
@@ -65,6 +52,10 @@ export default {
 	},
 
 	methods: {
+    openLink(link) {
+      window.location.href = link;
+    },
+
 		async sendData() {
 
 			await this.$recaptcha.init();
@@ -74,8 +65,8 @@ export default {
 				console.log('ReCaptcha token:', this.token);
 
 				let xhr = new XMLHttpRequest();
-				// xhr.addEventListener("load", () => {});
-				let link = `${process.env.BOT_URL}?name=${encodeURI(this.name)}&phone=${encodeURI(this.phone)}&token=${this.token}`;
+        let link =  `${process.env.BOT_URL}?name=${encodeURIComponent(this.name)}&phone=${encodeURIComponent(this.phone)}&token=${this.token}`;
+        
 				console.log(link);
 				xhr.open("POST", link);
 				xhr.send();
@@ -100,24 +91,13 @@ export default {
 	text-align: center;
 }
 
-.title {
-	font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-	display: block;
-	font-weight: 300;
-	font-size: 100px;
-	color: #35495e;
-	letter-spacing: 1px;
+.form {
+  width: 25rem;
+  align-items: flex-start;
+  text-align: left;
 }
 
-.subtitle {
-	font-weight: 300;
-	font-size: 42px;
-	color: #526488;
-	word-spacing: 5px;
-	padding-bottom: 15px;
-}
-
-.links {
-	padding-top: 15px;
+.socials {
+  margin-bottom: 1rem;
 }
 </style>

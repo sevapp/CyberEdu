@@ -4,28 +4,24 @@
     "description": "My astonishing Nuxt.js project",
     "author": "Vsevolod Pletnev (Sevapp)",
     "private": true,
-    
     "scripts": {
-        "dev": "vercel dev --debug",
-
+        "dev": "nuxt -H 0.0.0.0",
+        "vercel-dev": "vercel dev --debug",
         "build": "nuxt build",
         "start": "nuxt start -H 0.0.0.0",
-
         "export": "nuxt export",
         "serve": "nuxt serve",
-        "generate": "nuxt build && nuxt export",
-
+        "gen": "nuxt build && nuxt export",
         "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
     },
-
     "dependencies": {
         "@nuxtjs/dotenv": "^1.4.1",
         "@nuxtjs/recaptcha": "^0.6.2",
         "@nuxtjs/yandex-metrika": "^1.0.3",
-        "nuxt": "^2.13.0"
+        "nuxt": "^2.13.0",
+        "nuxt-buefy": "^0.3.31"
     },
-
     "devDependencies": {
         "@vercel/node": "^1.7.1",
         "node-sass": "^4.14.1",

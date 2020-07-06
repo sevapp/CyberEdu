@@ -1,6 +1,22 @@
 <template>
 	<div :class="$style.container">
 		<div>
+
+      <div class="columns bbb">
+        <div class="column bbb">
+          First column
+        </div>
+        <div class="column bbb">
+          Second column
+        </div>
+        <div class="column bbb">
+          Third column
+        </div>
+        <div class="column bbb">
+          Fourth column
+        </div>
+      </div>
+
 			<logo />
 
 			<h1 :class="$style.title">
@@ -17,7 +33,16 @@
 				</a>
 			</div>
 			<br>
-      
+
+      <h3 class="subtitle">With Material Design Icons</h3>
+      <bField>
+          <bInput placeholder="Search..."
+            type="search"
+            icon="magnify"
+            icon-clickable>
+          </bInput>
+      </bField>
+
 		</div>
 	</div>
 </template>
@@ -64,6 +89,7 @@ export default {
 </script>
 
 <style lang="scss" module>
+
 .container {
 	margin: 0 auto;
 	width: 100%;

@@ -39,6 +39,11 @@
       </b-input>
     </b-field>
 
+    <div :class="$style.policy">
+      Отрпавля свои данные, вы соглашаетесь с <nuxt-link to='/policy'>политикикой конфиденциальности</nuxt-link>
+    </div>
+
+    <br>
     <b-button 
       type="is-success"
       size="is-large"
@@ -53,8 +58,8 @@
 export default {
   data() {
     return {
-      name:   "Vsevolod",
-      phone:  "+7999722858",
+      name:   "",
+      phone:  "",
       token:  null,
     };
   },
@@ -107,6 +112,12 @@ export default {
 <style lang="scss" module>
 .form {
   text-align: left;
+  max-width: 25rem;
+}
+
+.policy {
+  line-height: 1rem;
+  color: #aaa;
 }
 
 .socials {

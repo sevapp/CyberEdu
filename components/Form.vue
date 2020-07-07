@@ -1,5 +1,5 @@
 <template>
-  <div class="box" :class="$style.form">
+  <div class="box" :class="$style.Form">
     <div :class="$style.socials">
       <b-button
         :class="$style._button"
@@ -21,20 +21,28 @@
       />
     </div>
 
-    <b-field>
-      <b-input placeholder="Имя"
+    <b-field
+      :type="nameIsValid">
+      <b-input
+        placeholder="Имя"
+        ref="iName"
         size="is-large"
         icon="emoticon-outline"
         v-model="name"
+        @input="testName"
         icon-clickable>
       </b-input>
     </b-field>
 
-    <b-field>
-      <b-input placeholder="Телефон"
+    <b-field
+      :type="phoneIsValid">
+      <b-input 
+        placeholder="Телефон"
+        ref="iPhone"
         size="is-large"
         icon="phone"
         v-model="phone"
+        @input="testPhone"
         icon-clickable>
       </b-input>
     </b-field>
@@ -58,9 +66,22 @@
 export default {
   data() {
     return {
-      name:   "",
-      phone:  "",
+      name:   '',
+      nameIsValid: '',
+      phone:  '',
+      phoneIsValid: '',
       token:  null,
+    };
+  },
+
+  computed() {
+    return {
+      // phoneIsValid: function () {
+      //   const regex = /^\+7?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      //   return this.phone == '' ? '' : (
+      //     regex.test(val) ? 'is-success' : 'is-danger'
+      //   );
+      // }
     };
   },
 
@@ -70,12 +91,14 @@ export default {
   },
 
   methods: {
-    testPhone() {
-
+    testName(val) {
+      const regex = /^[а-яА-Я ]+$/;
+      this.nameIsValid = this.name == '' ? '' : regex.test(val) ? 'is-success' : 'is-danger';
     },
-
-    testName() {
-
+    
+    testPhone(val) {
+      const regex = /^\+7?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      this.phoneIsValid = this.phone == '' ? '' : regex.test(val) ? 'is-success' : 'is-danger';
     },
 
     openLink(link) {
@@ -83,26 +106,33 @@ export default {
     },
 
     async sendData() {
-      await this.$recaptcha.init();
+      if (this.nameIsValid == 'is-success' && this.phoneIsValid == 'is-success') {
+        await this.$recaptcha.init();
 
-      try {
-        const token = await this.$recaptcha.execute('login');
-        console.log('ReCaptcha token:', token);
+        try {
+          const token = await this.$recaptcha.execute('login');
+          console.log('ReCaptcha token:', token);
 
-        let xhr = new XMLHttpRequest();
-        const link =  `${process.env.BOT_URL}?name=${encodeURIComponent(this.name)}&phone=${encodeURIComponent(this.phone)}&token=${token}`;
-      
-        console.log(link);
-        xhr.open("POST", link);
-        xhr.send();
-      
+          let xhr = new XMLHttpRequest();
+          const link =  `${process.env.BOT_URL}?name=${encodeURIComponent(this.name)}&phone=${encodeURIComponent(this.phone)}&token=${token}`;
+        
+          console.log(link);
+          xhr.open("POST", link);
+          xhr.send();
+        
+          this.$buefy.notification.open({
+            message: 'Отрпавлено!',
+            type: 'is-success'
+          });
+
+        } catch (error) {
+          console.log('Login error:', error);
+        }
+      } else {
         this.$buefy.notification.open({
-          message: 'Отрпавлено!',
-          type: 'is-success'
+          message: 'Некорретное имя или телефон',
+          type: 'is-danger'
         });
-
-      } catch (error) {
-        console.log('Login error:', error);
       }
     }
   },
@@ -110,7 +140,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-.form {
+.Form {
   text-align: left;
   max-width: 25rem;
 }

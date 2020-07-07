@@ -1,7 +1,6 @@
 const https = require('https');
 
-module.exports = (req, res) => 
-{
+module.exports = (req, res) => {
   const capchaAPI    = 'https://www.google.com/recaptcha/api/siteverify';
   const capchaSecret = process.env.CAPCHA_PRT;
 
@@ -17,8 +16,7 @@ module.exports = (req, res) =>
   const text = encodeURIComponent(`Новое сообщение от ${name}:\nТелефон: ${phone}`);
   const botSendLink = `${botAPI}/${botToken}/sendMessage?${chatID}&text=${text}`;
 
-  https.get(caphcaSendLink, response => 
-    {
+  https.get(caphcaSendLink, response => {
       let body = '';
 
       response.on('data', chunk => 
@@ -28,8 +26,7 @@ module.exports = (req, res) =>
       response.on('end', () => {
         const responseJSON = JSON.parse(body);
 
-        if (responseJSON.success) 
-        {
+        if (responseJSON.success) {
           https.get(botSendLink, () => 
             res.json({status: 'Ok'})
           );

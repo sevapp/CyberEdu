@@ -2,18 +2,31 @@
 	<div :class="$style.container">
 		<div>
 
-      <div class="box" :class="$style.form">
-        <h3 class="subtitle">Форма обратной связи</h3>
-
+      <div class="" :class="$style.form">
         <div :class="$style.socials">
-          <b-button type="is-info" @click="openLink('https://t.me/sevapp')">Telegram</b-button>
-          <b-button type="is-primary">Discord</b-button>
+          <b-button 
+            type="is-info"
+            size="is-large"
+            icon-left="telegram"
+            @click="openLink('https://t.me/sevapp')"
+            label="Telegram"
+          />
+
+          <b-button 
+            type="is-primary"
+            size="is-large"
+            icon-left="discord"
+            disabled
+            @click="openLink('https://t.me/sevapp')"
+            label="Discord"
+          />
         </div>
 
         <b-field>
           <b-input placeholder="Имя"
             type="search"
-            icon="account"
+            size="is-large"
+            icon="emoticon-outline"
             v-model="name"
             icon-clickable>
           </b-input>
@@ -22,13 +35,19 @@
         <b-field>
           <b-input placeholder="Телефон"
             type="search"
+            size="is-large"
             icon="phone"
             v-model="phone"
             icon-clickable>
           </b-input>
         </b-field>
 
-        <b-button type="is-success" @click="sendData">Отправить</b-button>
+        <b-button 
+          type="is-success"
+          size="is-large"
+          @click="sendData">
+            Отправить
+        </b-button>
       </div>
 		</div>
 	</div>
@@ -41,7 +60,7 @@ export default {
 	data() {
 		return {
 			name:   "Vsevolod",
-			phone:  "+7999722858",
+      phone:  "+7999722858",
 			token:  null,
 		};
 	},
@@ -52,6 +71,14 @@ export default {
 	},
 
 	methods: {
+    testPhone() {
+
+    },
+
+    testName() {
+
+    },
+
     openLink(link) {
       window.location.href = link;
     },
@@ -61,15 +88,20 @@ export default {
 			await this.$recaptcha.init();
 
 			try {
-				this.token = await this.$recaptcha.execute('login');
-				console.log('ReCaptcha token:', this.token);
+				const token = await this.$recaptcha.execute('login');
+				console.log('ReCaptcha token:', token);
 
 				let xhr = new XMLHttpRequest();
-        let link =  `${process.env.BOT_URL}?name=${encodeURIComponent(this.name)}&phone=${encodeURIComponent(this.phone)}&token=${this.token}`;
+        const link =  `${process.env.BOT_URL}?name=${encodeURIComponent(this.name)}&phone=${encodeURIComponent(this.phone)}&token=${token}`;
         
 				console.log(link);
 				xhr.open("POST", link);
-				xhr.send();
+        xhr.send();
+        
+        this.$buefy.notification.open({
+            message: 'Отрпавлено!',
+            type: 'is-success'
+        });
 
 			} catch (error) {
 				console.log('Login error:', error);
@@ -92,12 +124,13 @@ export default {
 }
 
 .form {
-  width: 25rem;
-  align-items: flex-start;
   text-align: left;
 }
 
 .socials {
-  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 </style>

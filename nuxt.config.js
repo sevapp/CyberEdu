@@ -78,6 +78,11 @@ export default {
     'nuxt-buefy'
   ],
 
+  buefy: {
+    materialDesignIcons: false,
+    defaultIconPack: 'mdi'
+  },
+
   recaptcha: {
     hideBadge: false,                   // Hide badge element (v3 & v2 via size=invisible)
     language: 'en',                     // Recaptcha language (v2)

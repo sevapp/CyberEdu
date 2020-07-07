@@ -16,6 +16,7 @@
         "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
     },
     "dependencies": {
+        "@mdi/font": "^5.3.45",
         "@nuxtjs/dotenv": "^1.4.1",
         "@nuxtjs/recaptcha": "^0.6.2",
         "@nuxtjs/yandex-metrika": "^1.0.3",

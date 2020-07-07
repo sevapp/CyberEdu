@@ -1,8 +1,8 @@
 <template>
-  <div class="box" :class="$style.Form">
+  <div class="box" :class="[$style.Form, {[$device.isMobile]: $style._mobile}]">
     <div :class="$style.socials">
       <b-button
-        :class="$style._button"
+        :class="$style.button"
         type="is-info"
         size="is-large"
         icon-left="telegram"
@@ -11,7 +11,7 @@
       />
 
       <b-button
-        :class="$style._button"
+        :class="$style.button"
         type="is-primary"
         size="is-large"
         icon-left="discord"
@@ -37,7 +37,7 @@
     <b-field
       :type="phoneIsValid">
       <b-input 
-        placeholder="Телефон"
+        placeholder="+70000000000"
         ref="iPhone"
         size="is-large"
         icon="phone"
@@ -57,6 +57,7 @@
       size="is-large"
       @click="sendData"
       label="Отправить"
+      :expanded="$device.isMobile"
     />
   </div>
 </template>
@@ -74,17 +75,6 @@ export default {
     };
   },
 
-  computed() {
-    return {
-      // phoneIsValid: function () {
-      //   const regex = /^\+7?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-      //   return this.phone == '' ? '' : (
-      //     regex.test(val) ? 'is-success' : 'is-danger'
-      //   );
-      // }
-    };
-  },
-
   mounted() {
     // console.log(process.env.CAPCHA_PUB);
     // console.log(process.env.BOT_URL);
@@ -97,7 +87,7 @@ export default {
     },
     
     testPhone(val) {
-      const regex = /^\+7?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      const regex = /^\+7{1}?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
       this.phoneIsValid = this.phone == '' ? '' : regex.test(val) ? 'is-success' : 'is-danger';
     },
 
@@ -143,6 +133,10 @@ export default {
 .Form {
   text-align: left;
   max-width: 25rem;
+
+  ._mobile {
+    max-width: 100%;
+  }
 }
 
 .policy {
@@ -156,8 +150,8 @@ export default {
   justify-content: space-between;
   margin-bottom: 2rem;
 
-  ._button {
-    width: 10.5rem;
+  ._mobile {
+    display: inherit;
   }
 }
 </style>

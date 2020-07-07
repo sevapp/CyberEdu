@@ -74,7 +74,7 @@ export default {
         // accurateTrackBounce: true,
       }
     ],
-
+    '@nuxtjs/device',
     'nuxt-buefy'
   ],
 

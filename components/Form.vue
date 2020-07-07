@@ -48,7 +48,7 @@
       </b-field>
 
       <div :class="$style.policy">
-        Отрпавля свои данные, вы соглашаетесь с <nuxt-link to='/policy'>политикикой конфиденциальности</nuxt-link>
+        Нажимая на кнопку «Отправить», вы даете согласие на обработку своих <nuxt-link to='/policy'>персональных данных</nuxt-link>
       </div>
 
       <br>
@@ -56,7 +56,7 @@
         type="is-warning"
         size="is-large"
         @click="sendData"
-        label="отправить"
+        label="Отправить"
         :expanded="$device.isMobile"
       />
     </div>

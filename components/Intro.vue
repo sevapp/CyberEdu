@@ -14,7 +14,7 @@ export default {
       strings: [
         'Сложный <l>экзамен</l> в вузе?',
         'Или хчешь <l>сменить</l> профессию?',
-        '<l>Интересуешься</l> программированием, но не знаешь с чего <l>начать</l>?',
+        '<l>Интересен</l> код, но не знаешь с чего <l>начать?</l>',
         'Все очень <l>просто...</l>',
         '<l>Напиши</l> нам в Telegram, Discord или <l>оставь</l> свой телефон)'
       ]
@@ -38,7 +38,6 @@ export default {
 
 <style lang="scss" module>
 .Title {
-	// background-color: #f999;
 	margin: 0 4rem 0 0;
 	width: 40%;
 	min-height: 23rem;
@@ -48,6 +47,7 @@ export default {
 	text-align: left;
   font-size: 4rem;
   hyphens: auto;
+  line-height: 1.3;
   // word-break: break-all;
 	padding: 1rem;
 

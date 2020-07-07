@@ -31,11 +31,10 @@ export default {
     ],
 
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicons/icon16x16.ico' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/icon32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/icon16x16.png' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/icon180x180.png' },
     ],
   },
 

@@ -15,8 +15,8 @@ export default {
         'Сложный <l>экзамен</l> в вузе?',
         'Или хочешь <l>сменить</l> профессию?',
         '<l>Интересен</l> код, но не знаешь с чего <l>начать?</l>',
-        'Все очень <l>просто...</l>',
-        '<l>Напиши</l> нам в Telegram, Discord или <l>оставь</l> свой телефон)'
+        '<l>Все</l> очень <l>просто...</l>',
+        '<l>Напиши</l> нам в Telegram / WhatsApp или <l>оставь</l> свой телефон)'
       ]
 		};
 	},
@@ -49,11 +49,11 @@ export default {
   font-size: 4rem;
   hyphens: auto;
   color: #000000;
-  text-shadow:
-    -1rem -1rem 0 #ffffff,
-    1rem -1rem 0 #ffffff,
-    -1rem 1rem 0 #ffffff,
-    1rem 1rem 0 #ffffff;
+  // text-shadow:
+  //   -1rem -1rem 0 #ffffff,
+  //   1rem -1rem 0 #ffffff,
+  //   -1rem 1rem 0 #ffffff,
+  //   1rem 1rem 0 #ffffff;
   line-height: 1.3;
   user-select: none;
   // word-break: break-all;

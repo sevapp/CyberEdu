@@ -127,7 +127,7 @@ export default {
           this.$buefy.notification.open({
             message: 'Отрпавлено!',
             type: 'is-warning',
-            position: 'is-bottom-right'
+            // position: 'is-bottom-right'
           });
 
         } catch (error) {
@@ -137,7 +137,7 @@ export default {
         this.$buefy.notification.open({
           message: 'Некорретное имя или телефон',
           type: 'is-danger',
-          position: 'is-bottom-right'
+          // position: 'is-bottom-right'
         });
       }
     }

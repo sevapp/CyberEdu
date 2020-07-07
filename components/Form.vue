@@ -1,65 +1,65 @@
 <template>
-  <div class="box" :class="[$style.Form, {[$device.isMobile]: $style._mobile}]">
-    <div :class="$style.socials">
-      <b-button
-        :class="$style.button"
-        type="is-info"
-        size="is-large"
-        icon-left="telegram"
-        @click="openLink('https://t.me/cyberedu_xyz')"
-        label="Telegram"
-      />
+    <div class="" :class="$style.Form">
+      <div :class="$style.socials">
+        <b-button
+          :class="$style.button"
+          type="is-info"
+          size="is-large"
+          icon-left="telegram"
+          @click="openLink('https://t.me/cyberedu_xyz')"
+          label="Telegram"
+        />
 
-      <b-button
-        :class="$style.button"
-        type="is-primary"
+        <b-button
+          :class="$style.button"
+          type="is-primary"
+          size="is-large"
+          icon-left="discord"
+          disabled
+          @click="openLink('https://t.me/sevapp')"
+          label="Discord"
+        />
+      </div>
+
+      <b-field
+        :type="nameIsValid">
+        <b-input
+          placeholder="Имя"
+          ref="iName"
+          size="is-large"
+          icon="emoticon-outline"
+          v-model="name"
+          @input="testName"
+          icon-clickable>
+        </b-input>
+      </b-field>
+
+      <b-field
+        :type="phoneIsValid">
+        <b-input 
+          placeholder="+70000000000"
+          ref="iPhone"
+          size="is-large"
+          icon="phone"
+          v-model="phone"
+          @input="testPhone"
+          icon-clickable>
+        </b-input>
+      </b-field>
+
+      <div :class="$style.policy">
+        Отрпавля свои данные, вы соглашаетесь с <nuxt-link to='/policy'>политикикой конфиденциальности</nuxt-link>
+      </div>
+
+      <br>
+      <b-button 
+        type="is-success"
         size="is-large"
-        icon-left="discord"
-        disabled
-        @click="openLink('https://t.me/sevapp')"
-        label="Discord"
+        @click="sendData"
+        label="отправить"
+        expanded
       />
     </div>
-
-    <b-field
-      :type="nameIsValid">
-      <b-input
-        placeholder="Имя"
-        ref="iName"
-        size="is-large"
-        icon="emoticon-outline"
-        v-model="name"
-        @input="testName"
-        icon-clickable>
-      </b-input>
-    </b-field>
-
-    <b-field
-      :type="phoneIsValid">
-      <b-input 
-        placeholder="+70000000000"
-        ref="iPhone"
-        size="is-large"
-        icon="phone"
-        v-model="phone"
-        @input="testPhone"
-        icon-clickable>
-      </b-input>
-    </b-field>
-
-    <div :class="$style.policy">
-      Отрпавля свои данные, вы соглашаетесь с <nuxt-link to='/policy'>политикикой конфиденциальности</nuxt-link>
-    </div>
-
-    <br>
-    <b-button 
-      type="is-success"
-      size="is-large"
-      @click="sendData"
-      label="Отправить"
-      :expanded="$device.isMobile"
-    />
-  </div>
 </template>
 
 <script>
@@ -130,13 +130,30 @@ export default {
 </script>
 
 <style lang="scss" module>
-.Form {
-  text-align: left;
-  max-width: 25rem;
+.container {
+  // min-height: 100vh;
+  display: flex;
+  justify-content: center;
 
   ._mobile {
-    max-width: 100%;
+    min-height: auto;
   }
+}
+
+.Form {
+  max-width: 25rem;
+  padding: 1rem;
+  text-align: left;
+  // min-height: 100vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+
+  @media (orientation: portrait) {
+		min-width: 100%;
+    background-color: #dee;
+	}
 }
 
 .policy {

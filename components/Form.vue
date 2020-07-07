@@ -22,7 +22,6 @@
           type="is-primary"
           size="is-large"
           icon-left="discord"
-          disabled
           @click="openLink('https://discordapp.com/channels/@me/292653910684860417')"
         />
       </div>

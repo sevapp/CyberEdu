@@ -9,3 +9,9 @@ body {
 a, l {
   color: #ffdd57;
 }
+
+input:focus { 
+  outline: none !important;
+  border-color: #ffdd57;;
+  box-shadow: 0 0 10px #ffdd57;;
+}

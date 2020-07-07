@@ -17,13 +17,22 @@
           @click="openLink('https://wa.me/79999722858')"
         />
 
-        <b-button
+        <!-- <b-button
           :class="$style.button"
           type="is-primary"
           size="is-large"
           icon-left="discord"
           @click="openLink('https://discordapp.com/channels/@me/292653910684860417')"
-        />
+        /> -->
+
+        <!-- <b-button
+          :class="$style.button"
+          type="is-info"
+          size="is-large"
+          icon-left="vk"
+          disabled
+          @click="openLink('')"
+        /> -->
       </div>
 
       <b-field
@@ -117,7 +126,8 @@ export default {
         
           this.$buefy.notification.open({
             message: 'Отрпавлено!',
-            type: 'is-warning'
+            type: 'is-warning',
+            position: 'is-bottom-right'
           });
 
         } catch (error) {
@@ -126,7 +136,8 @@ export default {
       } else {
         this.$buefy.notification.open({
           message: 'Некорретное имя или телефон',
-          type: 'is-danger'
+          type: 'is-danger',
+          position: 'is-bottom-right'
         });
       }
     }

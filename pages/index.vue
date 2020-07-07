@@ -3,9 +3,7 @@
 
     <Form />
 
-    <div class="" :class="$style.Title">
-      <p>Сложный экзамен в вузе?</p>
-		</div>
+    <Intro />
 	</div>
 </template>
 
@@ -40,25 +38,6 @@ export default {
 
 	@media (orientation: portrait) {
 		flex-direction: column-reverse;
-	}
-}
-
-.Title {
-	// background-color: #f999;
-	margin: 0 4rem 0 0;
-	width: 40%;
-	min-height: 23rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: left;
-	font-size: 6rem;
-	padding: 1rem;
-
-	@media (orientation: portrait) {
-		margin: 0 0 5rem 0;
-		font-size: 4rem;
-		min-width: 100%;
 	}
 }
 

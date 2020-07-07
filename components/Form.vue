@@ -53,11 +53,11 @@
 
       <br>
       <b-button 
-        type="is-success"
+        type="is-warning"
         size="is-large"
         @click="sendData"
         label="отправить"
-        expanded
+        :expanded="$device.isMobile"
       />
     </div>
 </template>
@@ -112,7 +112,7 @@ export default {
         
           this.$buefy.notification.open({
             message: 'Отрпавлено!',
-            type: 'is-success'
+            type: 'is-warning'
           });
 
         } catch (error) {
@@ -152,7 +152,7 @@ export default {
 
   @media (orientation: portrait) {
 		min-width: 100%;
-    background-color: #dee;
+    background-color: #eeeeee;
 	}
 }
 

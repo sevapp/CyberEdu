@@ -7,7 +7,14 @@
           size="is-large"
           icon-left="telegram"
           @click="openLink('https://t.me/cyberedu_xyz')"
-          label="Telegram"
+        />
+
+        <b-button
+          :class="$style.button"
+          type="is-success"
+          size="is-large"
+          icon-left="whatsapp"
+          @click="openLink('https://wa.me/79999722858')"
         />
 
         <b-button
@@ -16,8 +23,7 @@
           size="is-large"
           icon-left="discord"
           disabled
-          @click="openLink('https://t.me/sevapp')"
-          label="Discord"
+          @click="openLink('https://discordapp.com/channels/@me/292653910684860417')"
         />
       </div>
 
@@ -163,8 +169,8 @@ export default {
 
 .socials {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   margin-bottom: 2rem;
 
   ._mobile {

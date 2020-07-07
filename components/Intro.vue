@@ -43,13 +43,20 @@ export default {
 	min-height: 23rem;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+  align-items: center;
+  padding: 1rem;
 	text-align: left;
   font-size: 4rem;
   hyphens: auto;
+  color: #000000;
+  text-shadow:
+    -1rem -1rem 0 #ffffff,
+    1rem -1rem 0 #ffffff,
+    -1rem 1rem 0 #ffffff,
+    1rem 1rem 0 #ffffff;
   line-height: 1.3;
+  user-select: none;
   // word-break: break-all;
-	padding: 1rem;
 
 	@media (orientation: portrait) {
 		margin: 0 0 5rem 0;

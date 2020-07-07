@@ -62,7 +62,7 @@
       </b-field>
 
       <div :class="$style.policy">
-        Нажимая на кнопку «Отправить», вы даете согласие на обработку своих <nuxt-link to='/policy'>персональных данных</nuxt-link>
+        Нажимая на кнопку «Отправить», вы даете согласие на обработку своих <nuxt-link to='/privacy'>персональных данных</nuxt-link>
       </div>
 
       <br>
@@ -160,6 +160,7 @@ export default {
   max-width: 25rem;
   padding: 1rem;
   text-align: left;
+  background-color: #ffffff;
   // min-height: 100vh;
   // display: flex;
   // justify-content: center;

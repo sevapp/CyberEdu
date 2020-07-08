@@ -37,13 +37,14 @@ export default {
     //   this.text = this.strings[i % this.strings.length];
     // }, 3000);
     this.generateStrings();
+    console.log(this.buffer);
     this.animateStrings();
 	},
 
 	methods: {
     generateStrings() {
       function gen(str, max_len) {
-		    let symbols = '!@#$%^&*(){}<>?/\|,.XZYBNH~';
+		    let symbols = '!@#$%^&*(){}<>?/"01234567890ABCDEFXYZ';
 		    let out = [];
 		    let lens = [];
 		    
@@ -54,7 +55,7 @@ export default {
           let cur_str = '';
           
           for (let s = 0; s < str.length; s ++) {
-            if (i < lens[s]) {
+            if (i < lens[s] && str[s] != ' ') {
               cur_str += symbols[symbols.length * Math.random() | 0];
             } else {
               cur_str += str[s];
@@ -76,7 +77,7 @@ export default {
     animateStrings() {
       let j = 0;
 			let animBuffer = () => {
-        let i = 0;
+        let i = 0 ;
         let interval = setInterval(() => {
           if (i < this.buffer[j % this.buffer.length].length) {
             // title.innerHTML = '';

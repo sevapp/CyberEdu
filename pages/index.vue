@@ -39,6 +39,7 @@ export default {
 
 	@media (orientation: portrait) {
 		flex-direction: column-reverse;
+		min-height: inherit;
 	}
 }
 

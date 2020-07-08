@@ -36,7 +36,8 @@
       </div>
 
       <b-field
-        :type="nameIsValid">
+        :type="nameIsValid"
+        message="Руссикими буквами">
         <b-input
           placeholder="Имя"
           ref="iName"
@@ -49,9 +50,10 @@
       </b-field>
 
       <b-field
-        :type="phoneIsValid">
+        :type="phoneIsValid"
+        message="В формате +7XXXXXXXXXX">
         <b-input 
-          placeholder="+70000000000"
+          placeholder="Телефон"
           ref="iPhone"
           size="is-large"
           icon="phone"
@@ -66,12 +68,12 @@
       </div>
 
       <br>
-      <b-button 
+      <b-button
+        :class="$style.buttonSend"
         type="is-warning"
         size="is-large"
         @click="sendData"
         label="Отправить"
-        :expanded="$device.isMobile"
       />
     </div>
 </template>
@@ -187,5 +189,11 @@ export default {
   ._mobile {
     display: inherit;
   }
+}
+
+.buttonSend {
+  @media (orientation: portrait) {
+		min-width: 100%;
+	}
 }
 </style>

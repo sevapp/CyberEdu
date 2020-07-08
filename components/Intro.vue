@@ -48,7 +48,7 @@ export default {
 	text-align: left;
   font-size: 4rem;
   hyphens: auto;
-  color: #000000;
+  color: #666666;
   // text-shadow:
   //   -1rem -1rem 0 #ffffff,
   //   1rem -1rem 0 #ffffff,
@@ -59,9 +59,10 @@ export default {
   // word-break: break-all;
 
 	@media (orientation: portrait) {
-		margin: 0 0 5rem 0;
+		margin: 5rem 0 5rem 0;
 		font-size: 3rem;
-		min-width: 100%;
+    min-width: 100%;
+    text-align: center;
 	}
 }
 

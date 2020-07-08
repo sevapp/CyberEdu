@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.container">
+	<div :class="$style.section">
     <Form />
     <Intro />
 	</div>
@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" module>
 
-.container {
+.section {
 	margin: 0 auto;
 	width: 100%;
 	min-height: 100vh;

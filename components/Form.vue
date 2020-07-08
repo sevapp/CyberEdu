@@ -103,7 +103,7 @@ export default {
     },
     
     testPhone(val) {
-      const regex = /^\+7{1}?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      const regex = /^\+7{1}?([0-9]{3})?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
       this.phoneIsValid = this.phone == '' ? '' : regex.test(val) ? 'is-success' : 'is-danger';
     },
 
@@ -126,21 +126,23 @@ export default {
           xhr.open("POST", link);
           xhr.send();
         
-          this.$buefy.notification.open({
-            message: 'Отрпавлено!',
+          // this.$buefy.notification.open({
+          //   message: 'Отрпавлено!',
+          //   type: 'is-warning',
+          //   duration: 10000,
+          //   position: 'is-bottom'
+          //   // position: 'is-bottom-right'
+          // });
+
+          this.$buefy.dialog.alert({
             type: 'is-warning',
-            // position: 'is-bottom-right'
-          });
+            message: '<h3 class="subtitle">Ожидайте звонка, большое вам спасибо!</h3>',
+            confirmText: 'Ок'
+          })
 
         } catch (error) {
           console.log('Login error:', error);
         }
-      } else {
-        this.$buefy.notification.open({
-          message: 'Некорретное имя или телефон',
-          type: 'is-danger',
-          // position: 'is-bottom-right'
-        });
       }
     }
   },

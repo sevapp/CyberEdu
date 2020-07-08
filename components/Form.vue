@@ -37,7 +37,7 @@
 
       <b-field
         :type="nameIsValid"
-        message="Руссикими буквами">
+        message="Русскими буквами">
         <b-input
           placeholder="Имя"
           ref="iName"

@@ -37,14 +37,13 @@ export default {
     //   this.text = this.strings[i % this.strings.length];
     // }, 3000);
     this.generateStrings();
-    console.log(this.buffer);
     this.animateStrings();
 	},
 
 	methods: {
     generateStrings() {
       function gen(str, max_len) {
-		    let symbols = '!@#$%^&*(){}<>?/"01234567890ABCDEFXYZ';
+		    let symbols = '!@#$%^&01234567890ABCDEFXYZ';
 		    let out = [];
 		    let lens = [];
 		    
@@ -101,7 +100,7 @@ export default {
 .Title {
 	margin: 0 4rem 0 0;
 	width: 40%;
-	min-height: 23rem;
+	min-height: 26rem;
 	display: flex;
 	justify-content: center;
   align-items: center;

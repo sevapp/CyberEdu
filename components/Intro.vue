@@ -11,27 +11,87 @@ export default {
 	data() {
 		return {
       text: '',
+      buffer: [],
       strings: [
-        'Сложный <l>экзамен</l> в вузе?',
-        'Или хочешь <l>сменить</l> профессию?',
-        '<l>Интересен</l> код, но не знаешь с чего <l>начать?</l>',
-        '<l>Все</l> очень <l>просто...</l>',
-        '<l>Напиши</l> нам в Telegram / WhatsApp или <l>оставь</l> свой телефон)'
+        'Сложный экзамен в вузе?',
+		    'Или хочешь сменить профессию?',
+		    'Интересен код, но не знаешь с чего начать?',
+		    'Все очень просто...',
+		    'Напиши нам в Telegram / WhatsApp или оставь свой телефон)'
       ]
+      // strings: [
+      //   'Сложный <l>экзамен</l> в вузе?',
+      //   'Или хочешь <l>сменить</l> профессию?',
+      //   '<l>Интересен</l> код, но не знаешь с чего <l>начать?</l>',
+      //   '<l>Все</l> очень <l>просто...</l>',
+      //   '<l>Напиши</l> нам в Telegram / WhatsApp или <l>оставь</l> свой телефон)'
+      // ]
 		};
 	},
 
 	mounted() {
-    this.text = this.strings[0];
-    let i = 0;
-    setInterval(() => {
-      i ++;
-      this.text = this.strings[i % this.strings.length];
-    }, 3000);
+    // this.text = this.strings[0];
+    // let i = 0;
+    // setInterval(() => {
+    //   i ++;
+    //   this.text = this.strings[i % this.strings.length];
+    // }, 3000);
+    this.generateStrings();
+    this.animateStrings();
 	},
 
 	methods: {
+    generateStrings() {
+      function gen(str, max_len) {
+		    let symbols = '!@#$%^&*(){}<>?/\|,.XZYBNH~';
+		    let out = [];
+		    let lens = [];
+		    
+		    for (let i = 0; i < str.length; i ++)
+		      lens.push(Math.random() * max_len | 0);
+		    
+		    for (let i = 0; i < max_len; i ++) {
+          let cur_str = '';
+          
+          for (let s = 0; s < str.length; s ++) {
+            if (i < lens[s]) {
+              cur_str += symbols[symbols.length * Math.random() | 0];
+            } else {
+              cur_str += str[s];
+            }
+          }
+		        
+          out.push(cur_str);
+		    }
+		    
+		    return out;
+      }
+          
+          
+      for (let i = 0; i < this.strings.length; i ++) {
+        this.buffer.push(gen(this.strings[i], 10))
+      }
+    },
 
+    animateStrings() {
+      let j = 0;
+			let animBuffer = () => {
+        let i = 0;
+        let interval = setInterval(() => {
+          if (i < this.buffer[j % this.buffer.length].length) {
+            // title.innerHTML = '';
+            this.text = this.buffer[j % this.buffer.length][i];
+            i ++;
+          } else {
+            j ++;
+            clearInterval(interval);
+            setTimeout(animBuffer, 2500);
+          }
+        }, 100);
+			}
+
+			animBuffer();
+    }
 	},
 }
 </script>

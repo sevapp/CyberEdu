@@ -12,20 +12,20 @@ export default {
 		return {
       text: '',
       buffer: [],
-      strings: [
-        'Сложный экзамен в вузе?',
-		    'Или хочешь сменить профессию?',
-		    'Интересен код, но не знаешь с чего начать?',
-		    'Все очень просто...',
-		    'Напиши нам в Telegram / WhatsApp или оставь свой телефон)'
-      ]
       // strings: [
-      //   'Сложный <l>экзамен</l> в вузе?',
-      //   'Или хочешь <l>сменить</l> профессию?',
-      //   '<l>Интересен</l> код, но не знаешь с чего <l>начать?</l>',
-      //   '<l>Все</l> очень <l>просто...</l>',
-      //   '<l>Напиши</l> нам в Telegram / WhatsApp или <l>оставь</l> свой телефон)'
+      //   'Сложный экзамен в вузе?',
+		  //   'Или хочешь сменить профессию?',
+		  //   'Интересен код, но не знаешь с чего начать?',
+		  //   'Все очень просто...',
+		  //   'Напиши нам в Telegram / WhatsApp или оставь свой телефон)'
       // ]
+      strings: [
+        'Сложный <l>экзамен</l> в вузе?',
+        'Или хочешь <l>сменить</l> профессию?',
+        '<l>Интересен</l> код, но не знаешь с чего <l>начать?</l>',
+        '<l>Все</l> очень <l>просто...</l>',
+        '<l>Напиши</l> нам в Telegram / WhatsApp или <l>оставь</l> свой телефон)'
+      ]
 		};
 	},
 
@@ -38,12 +38,14 @@ export default {
     // }, 3000);
     this.generateStrings();
     this.animateStrings();
+    console.log(this.buffer);
 	},
 
 	methods: {
     generateStrings() {
       function gen(str, max_len) {
-		    let symbols = '!@#$%^&01234567890ABCDEFXYZ';
+        let symbols = '01234567890ABCDEFXYZabcdefxyz';
+        let without = '<>/l '
 		    let out = [];
 		    let lens = [];
 		    
@@ -54,7 +56,7 @@ export default {
           let cur_str = '';
           
           for (let s = 0; s < str.length; s ++) {
-            if (i < lens[s] && str[s] != ' ') {
+            if (i < lens[s] && without.indexOf(str[s]) == -1) {
               cur_str += symbols[symbols.length * Math.random() | 0];
             } else {
               cur_str += str[s];

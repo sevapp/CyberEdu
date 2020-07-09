@@ -98,8 +98,8 @@ export default {
 
   methods: {
     testName(val) {
-      const regex = /^[а-яА-Я ]+$/;
-      this.nameIsValid = this.name == '' ? '' : regex.test(val) ? 'is-success' : 'is-danger';
+      const regex = /^[а-яА-Я]+$/;
+      this.nameIsValid = this.name == '' ? '' : regex.test(val) && val.length >= 3 && val.length <= 15 ? 'is-success' : 'is-danger';
     },
     
     testPhone(val) {

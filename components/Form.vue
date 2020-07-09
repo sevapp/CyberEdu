@@ -180,6 +180,7 @@ export default {
 .policy {
   line-height: 1rem;
   color: #aaa;
+  font-size: 0.75rem;
 }
 
 .socials {
@@ -188,9 +189,9 @@ export default {
   // justify-content: space-between;
   margin-bottom: 2rem;
 
-  ._mobile {
-    display: inherit;
-  }
+  @media (orientation: portrait) {
+		// text-align: right;
+	}
 }
 
 .buttonSend {

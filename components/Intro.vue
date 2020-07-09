@@ -122,7 +122,7 @@ export default {
 		margin: 5rem 0 5rem 0;
 		font-size: 3rem;
     min-width: 100%;
-    text-align: center;
+    // text-align: center;
 	}
 }
 

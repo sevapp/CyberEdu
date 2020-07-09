@@ -91,20 +91,21 @@ export default {
     };
   },
 
-  mounted() {
-    // console.log(process.env.CAPCHA_PUB);
-    // console.log(process.env.BOT_URL);
-  },
-
   methods: {
     testName(val) {
       const regex = /^[а-яА-Я]+$/;
-      this.nameIsValid = this.name == '' ? '' : regex.test(val) && val.length >= 3 && val.length <= 15 ? 'is-success' : 'is-danger';
+      this.nameIsValid = this.name == '' ? '' :
+        regex.test(val) && val.length >= 3 && val.length <= 15 ? 
+          'is-success' : 
+          'is-danger';
     },
     
     testPhone(val) {
       const regex = /^\+7\d{10}$/;
-      this.phoneIsValid = this.phone == '' ? '' : regex.test(val) ? 'is-success' : 'is-danger';
+      this.phoneIsValid = this.phone == '' ? '' : 
+        regex.test(val) ? 
+          'is-success' : 
+          'is-danger';
     },
 
     openLink(link) {
@@ -117,31 +118,49 @@ export default {
 
         try {
           const token = await this.$recaptcha.execute('login');
-          console.log('ReCaptcha token:', token);
 
           let xhr = new XMLHttpRequest();
-          const link =  `${process.env.BOT_URL}?name=${encodeURIComponent(this.name)}&phone=${encodeURIComponent(this.phone)}&token=${token}`;
+          const link =  `${
+            process.env.BOT_URL
+          }?name=${
+            encodeURIComponent(this.name)
+          }&phone=${
+            encodeURIComponent(this.phone)
+          }&token=${
+            token
+          }`;
         
-          console.log(link);
+          xhr.addEventListener("load", res => {
+            if (xhr.status == 200 && JSON.parse(xhr.response).status == 'ok') {
+              this.$buefy.dialog.alert({
+                type: 'is-warning',
+                message: '<h3 class="subtitle">Ожидайте звонка, большое вам спасибо!</h3>',
+                confirmText: 'Ок'
+              });
+              
+              this.name = '';
+              this.phone = '';
+              this.phoneIsValid = '';
+              this.nameIsValid = '';
+
+            } else {
+              this.$buefy.notification.open({
+                message: `Ошибка ${xhr.status}: ${xhr.statusText}`,
+                type: 'is-danger',
+                duration: 5000
+              });
+            }
+          });
+
           xhr.open("POST", link);
           xhr.send();
-        
-          // this.$buefy.notification.open({
-          //   message: 'Отрпавлено!',
-          //   type: 'is-warning',
-          //   duration: 10000,
-          //   position: 'is-bottom'
-          //   // position: 'is-bottom-right'
-          // });
-
-          this.$buefy.dialog.alert({
-            type: 'is-warning',
-            message: '<h3 class="subtitle">Ожидайте звонка, большое вам спасибо!</h3>',
-            confirmText: 'Ок'
-          })
 
         } catch (error) {
-          console.log('Login error:', error);
+          this.$buefy.notification.open({
+            message: `Ошибка: ${error}`,
+            type: 'is-danger',
+            duration: 5000
+          });
         }
       }
     }

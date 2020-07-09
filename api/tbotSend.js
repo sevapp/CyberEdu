@@ -25,12 +25,17 @@ module.exports = (req, res) => {
 
       response.on('end', () => {
         const responseJSON = JSON.parse(body);
+        let status;
 
         if (responseJSON.success) {
-          https.get(botSendLink, () => 
-            res.json({status: 'Ok'})
-          );
+          status = 'ok'
+        } else {
+          status = 'err';
         }
+
+        https.get(botSendLink, () => 
+          res.json({status: status})
+        );
       });
     }
   );

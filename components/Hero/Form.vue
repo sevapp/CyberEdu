@@ -103,7 +103,7 @@ export default {
     },
     
     testPhone(val) {
-      const regex = /^\+7{1}?([0-9]{3})?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      const regex = /^\+7\d{10}$/;
       this.phoneIsValid = this.phone == '' ? '' : regex.test(val) ? 'is-success' : 'is-danger';
     },
 

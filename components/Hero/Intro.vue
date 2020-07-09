@@ -117,6 +117,7 @@ export default {
   //   -1rem 1rem 0 #ffffff,
   //   1rem 1rem 0 #ffffff;
   line-height: 1.3;
+  font-weight: 600;
   user-select: none;
   // word-break: break-all;
 

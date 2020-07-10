@@ -1,6 +1,6 @@
 <template>
   <div class="" :class="$style.Title">
-    <p v-html="text"></p>
+    <samp v-html="text"></samp>
   </div>
 </template>
 
@@ -38,14 +38,15 @@ export default {
     // }, 3000);
     this.generateStrings();
     this.animateStrings();
-    console.log(this.buffer.toString());
+    // console.log(this.buffer.toString());
+    console.log(this.buffer);
 	},
 
 	methods: {
     generateStrings() {
       function gen(str, max_len) {
-        let symbols = 'AaBbCcDdEeFf0123456789#$%@';
-        let without = '<>/l '
+        let symbols = 'AaBbCcDdEeFf0123456789@#$%&XxYyZz';
+        let without = '<>/l ).!?/'
 		    let out = [];
 		    let lens = [];
 		    
@@ -83,6 +84,7 @@ export default {
           if (i < this.buffer[j % this.buffer.length].length) {
             // title.innerHTML = '';
             this.text = this.buffer[j % this.buffer.length][i];
+            this.$forceUpdate();
             i ++;
           } else {
             j ++;
@@ -108,16 +110,16 @@ export default {
   align-items: center;
   padding: 1rem;
 	text-align: left;
-  font-size: 4rem;
-  hyphens: auto;
+  font-size: 4.5rem;
+  // hyphens: auto;
   color: #666666;
   // text-shadow:
   //   -1rem -1rem 0 #ffffff,
   //   1rem -1rem 0 #ffffff,
   //   -1rem 1rem 0 #ffffff,
   //   1rem 1rem 0 #ffffff;
-  line-height: 1.3;
-  font-weight: 800;
+  line-height: 1.1;
+  font-weight: 900;
   user-select: none;
   // word-break: break-all;
 

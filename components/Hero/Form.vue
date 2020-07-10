@@ -1,81 +1,81 @@
 <template>
-    <div class="" :class="$style.Form">
-      <div :class="$style.socials">
-        <b-button
-          :class="$style.button"
-          type="is-info"
-          size="is-large"
-          icon-left="telegram"
-          @click="openLink('https://t.me/cyberedu_xyz')"
-        />
-
-        <b-button
-          :class="$style.button"
-          type="is-success"
-          size="is-large"
-          icon-left="whatsapp"
-          @click="openLink('https://wa.me/79999722858')"
-        />
-
-        <!-- <b-button
-          :class="$style.button"
-          type="is-primary"
-          size="is-large"
-          icon-left="discord"
-          @click="openLink('https://discordapp.com/channels/@me/292653910684860417')"
-        /> -->
-
-        <!-- <b-button
-          :class="$style.button"
-          type="is-info"
-          size="is-large"
-          icon-left="vk"
-          disabled
-          @click="openLink('')"
-        /> -->
-      </div>
-
-      <b-field
-        :type="nameIsValid"
-        message="Русскими буквами">
-        <b-input
-          placeholder="Имя"
-          ref="iName"
-          size="is-large"
-          icon="emoticon-outline"
-          v-model="name"
-          @input="testName"
-          icon-clickable>
-        </b-input>
-      </b-field>
-
-      <b-field
-        :type="phoneIsValid"
-        message="В формате +7XXXXXXXXXX">
-        <b-input 
-          placeholder="Телефон"
-          ref="iPhone"
-          size="is-large"
-          icon="phone"
-          v-model="phone"
-          @input="testPhone"
-          icon-clickable>
-        </b-input>
-      </b-field>
-
-      <div :class="$style.policy">
-        Нажимая на кнопку «Отправить», вы даете согласие на обработку своих <nuxt-link to='/privacy'>персональных данных</nuxt-link>
-      </div>
-
-      <br>
+  <div class="" :class="$style.Form">
+    <div :class="$style.socials">
       <b-button
-        :class="$style.buttonSend"
-        type="is-warning"
+        :class="$style.button"
+        type="is-info"
         size="is-large"
-        @click="sendData"
-        label="Отправить"
+        icon-left="telegram"
+        @click="openLink('https://t.me/cyberedu_xyz')"
       />
+
+      <b-button
+        :class="$style.button"
+        type="is-success"
+        size="is-large"
+        icon-left="whatsapp"
+        @click="openLink('https://wa.me/79999722858')"
+      />
+
+      <!-- <b-button
+        :class="$style.button"
+        type="is-primary"
+        size="is-large"
+        icon-left="discord"
+        @click="openLink('https://discordapp.com/channels/@me/292653910684860417')"
+      /> -->
+
+      <!-- <b-button
+        :class="$style.button"
+        type="is-info"
+        size="is-large"
+        icon-left="vk"
+        disabled
+        @click="openLink('')"
+      /> -->
     </div>
+
+    <b-field
+      :type="nameIsValid"
+      message="Русскими буквами">
+      <b-input
+        placeholder="Имя"
+        ref="iName"
+        size="is-large"
+        icon="emoticon-outline"
+        v-model="name"
+        @input="testName"
+        icon-clickable>
+      </b-input>
+    </b-field>
+
+    <b-field
+      :type="phoneIsValid"
+      message="В формате +7XXXXXXXXXX">
+      <b-input 
+        placeholder="Телефон"
+        ref="iPhone"
+        size="is-large"
+        icon="phone"
+        v-model="phone"
+        @input="testPhone"
+        icon-clickable>
+      </b-input>
+    </b-field>
+
+    <div :class="$style.policy">
+      Нажимая на кнопку «Отправить», вы даете согласие на обработку своих <nuxt-link to='/privacy'>персональных данных</nuxt-link>
+    </div>
+
+    <br>
+    <b-button
+      :class="$style.buttonSend"
+      type="is-warning"
+      size="is-large"
+      @click="sendData"
+      label="Отправить"
+    />
+  </div>
 </template>
 
 <script>
@@ -137,7 +137,7 @@ export default {
                 message: '<h3 class="subtitle">Ожидайте звонка, большое вам спасибо!</h3>',
                 confirmText: 'Ок'
               });
-              
+
               this.name = '';
               this.phone = '';
               this.phoneIsValid = '';

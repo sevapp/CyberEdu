@@ -38,13 +38,13 @@ export default {
     // }, 3000);
     this.generateStrings();
     this.animateStrings();
-    console.log(this.buffer);
+    console.log(this.buffer.toString());
 	},
 
 	methods: {
     generateStrings() {
       function gen(str, max_len) {
-        let symbols = '01234567890ABCDEFXYZabcdefxyz';
+        let symbols = 'AaBbCcDdEeFf0123456789#$%@';
         let without = '<>/l '
 		    let out = [];
 		    let lens = [];
@@ -117,7 +117,7 @@ export default {
   //   -1rem 1rem 0 #ffffff,
   //   1rem 1rem 0 #ffffff;
   line-height: 1.3;
-  font-weight: 600;
+  font-weight: 800;
   user-select: none;
   // word-break: break-all;
 

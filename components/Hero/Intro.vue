@@ -113,9 +113,10 @@ export default {
   // word-break: break-all;
 
 	@media (orientation: portrait) {
-		margin: 5rem 0 5rem 0;
-		font-size: 3rem;
+		margin: 1rem 0 1rem 0;
+    font-size: 2.6rem;
     min-width: 100%;
+    min-height: 28rem;
     // text-align: center;
 	}
 }

@@ -12,13 +12,6 @@ export default {
 		return {
       text: '',
       buffer: [],
-      // strings: [
-      //   'Сложный экзамен в вузе?',
-		  //   'Или хочешь сменить профессию?',
-		  //   'Интересен код, но не знаешь с чего начать?',
-		  //   'Все очень просто...',
-		  //   'Напиши нам в Telegram / WhatsApp или оставь свой телефон)'
-      // ]
       strings: [
         'Сложный <l>экзамен</l> в вузе?',
         'Или хочешь <l>сменить</l> профессию?',
@@ -38,8 +31,6 @@ export default {
     // }, 3000);
     this.generateStrings();
     this.animateStrings();
-    // console.log(this.buffer.toString());
-    console.log(this.buffer);
 	},
 
 	methods: {

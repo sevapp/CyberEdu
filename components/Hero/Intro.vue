@@ -46,7 +46,7 @@ export default {
     generateStrings() {
       function gen(str, max_len) {
         let symbols = 'AaBbCcDdEeFf0123456789@#$%&XxYyZz';
-        let without = '<>/l ).!?/'
+        let without = '<>/l /'
 		    let out = [];
 		    let lens = [];
 		    
@@ -111,7 +111,7 @@ export default {
   padding: 1rem;
 	text-align: left;
   font-size: 4.5rem;
-  // hyphens: auto;
+  hyphens: auto;
   color: #666666;
   // text-shadow:
   //   -1rem -1rem 0 #ffffff,

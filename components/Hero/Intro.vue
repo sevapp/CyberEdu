@@ -1,13 +1,12 @@
 <template>
   <div class="" :class="$style.Title">
-    <samp v-html="text"></samp>
+    <samp :class="$style.box" v-html="text"></samp>
   </div>
 </template>
 
 <script>
 
 export default {
-
 	data() {
 		return {
       text: '',
@@ -63,7 +62,7 @@ export default {
           
           
       for (let i = 0; i < this.strings.length; i ++) {
-        this.buffer.push(gen(this.strings[i], 10))
+        this.buffer.push(gen(this.strings[i], 10));
       }
     },
 
@@ -82,7 +81,7 @@ export default {
             clearInterval(interval);
             setTimeout(animBuffer, 2500);
           }
-        }, 100);
+        }, 80);
 			}
 
 			animBuffer();
@@ -110,7 +109,6 @@ export default {
   //   -1rem 1rem 0 #ffffff,
   //   1rem 1rem 0 #ffffff;
   line-height: 1.1;
-  font-weight: 900;
   user-select: none;
   // word-break: break-all;
 
@@ -120,6 +118,10 @@ export default {
     min-width: 100%;
     // text-align: center;
 	}
+}
+
+.box {
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
 </style>

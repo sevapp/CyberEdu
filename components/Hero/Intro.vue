@@ -125,6 +125,9 @@ export default {
   font-family: 'Rubik Mono One', sans-serif;
   word-spacing: -30px;
   letter-spacing: -3px;
+  @media (orientation: portrait) {
+    word-spacing: -15px;
+  }
 }
 
 </style>

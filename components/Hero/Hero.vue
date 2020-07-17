@@ -18,7 +18,7 @@
 	flex-direction: row-reverse;
 	background: radial-gradient(circle, #cccccc 0.06em, #ffffff 0.052em);
 	background-size: 2em 2em;
-  background-repeat: repeat;
+  	background-repeat: repeat;
 
 	@media (orientation: portrait) {
 		flex-direction: column-reverse;

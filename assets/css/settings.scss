@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 $yellow: #ffdd57;
+$telegram: #209cee;
+$whatsapp: #23d160;
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -12,6 +14,14 @@ body {
 
 l {
   color: $yellow;
+}
+
+T {
+  color: $telegram;
+}
+
+W {
+  color: $whatsapp;
 }
 
 $link: $yellow;

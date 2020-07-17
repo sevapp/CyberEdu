@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<Hero />
-		<!-- <HowTo /> -->
+		<!-- <HowTo />
+		<Tech /> -->
 	</div>
 </template>
 

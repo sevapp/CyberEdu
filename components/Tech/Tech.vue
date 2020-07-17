@@ -14,8 +14,8 @@
 	align-items: center;
 	text-align: center;
 	flex-direction: column;
-	background-color: #4a4a4a;
-	background: radial-gradient(circle, #666666 0.06em, #4a4a4a 0.052em);
+	background-color: #ffdd57;
+	background: radial-gradient(circle, #bbbbbb 0.06em, #ffdd57 0.052em);
 	background-size: 2em 2em;
   	background-repeat: repeat;
 

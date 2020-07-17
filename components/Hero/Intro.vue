@@ -16,7 +16,7 @@ export default {
         'Или хочешь <l>сменить</l> профессию?',
         '<l>Интересен</l> код, но не знаешь с чего <l>начать?</l>',
         '<l>Все</l> очень <l>просто...</l>',
-        '<l>Напиши</l> нам в Telegram / WhatsApp или <l>оставь</l> свой телефон)'
+        '<l>Напиши</l> нам в <T>Telegram</T>, <W>WhatsApp</W> или <l>оставь</l> свой телефон)'
       ]
 		};
 	},
@@ -36,7 +36,7 @@ export default {
     generateStrings() {
       function gen(str, max_len) {
         let symbols = 'AaBbCcDdEeFf0123456789@#$%&XxYyZz';
-        let without = '<>/l /'
+        let without = '<>/l /WT'
 		    let out = [];
 		    let lens = [];
 		    
@@ -101,7 +101,7 @@ export default {
   padding: 1rem;
 	text-align: left;
   font-size: 4.5rem;
-  hyphens: auto;
+  // hyphens: auto;
   color: #666666;
   // text-shadow:
   //   -1rem -1rem 0 #ffffff,
@@ -123,6 +123,8 @@ export default {
 
 .box {
   font-family: 'Rubik Mono One', sans-serif;
+  word-spacing: -30px;
+  letter-spacing: -3px;
 }
 
 </style>

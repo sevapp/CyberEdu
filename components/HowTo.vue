@@ -14,15 +14,30 @@
       <div class="column is-half is-offset-1">
         <div :class="$style.text">
           <ul>
-            <li>1. Тут очень много какого-то текста Тут очень много какого-то текста Тут очень много какого-то текста</li>
+            <li>
+              <l>#</l> 
+              Тут очень много какого-то текста Тут очень много какого-то текста Тут очень много какого-то текста
+            </li>
             <br>
-            <li>2. Тут очень много какого-то текста Тут очень много какого-то текста Тут очень много какого-то текста</li>
+            <li>
+              <l>#</l>
+              Тут очень много какого-то текста Тут очень много какого-то текста Тут очень много какого-то текста
+            </li>
             <br>
-            <li>3. Cats</li>
+            <li>
+              <l>#</l>
+              Cats
+            </li>
             <br>
-            <li>4. Cats</li>
+            <li>
+              <l>#</l>
+              Cats
+            </li>
             <br>
-            <li>5. Cats</li>
+            <li>
+              <l>#</l>
+              Cats
+            </li>
           </ul>
         </div>
       </div>
@@ -99,9 +114,37 @@
 }
 
 .text {
+  color: #666666;
   margin: 1rem 1rem 1rem 1rem;
   font-size: 2.5rem;
   text-align: left;
+  font-family: 'Rubik Mono One', sans-serif;
+  word-spacing: -10px;
+  letter-spacing: 0px;
+
+  @media (orientation: portrait) {
+    font-size: 1.5rem;
+  }
+}
+
+li {
+  // background: #ffdd57;
+  // padding: 1rem;
+  border-radius: 4px;
+  margin-left: -10px;
+  line-height: 1.3;
+  background: #fff;
+  border: 5px solid #666666;
+  padding: 1.5rem;
+  // text-decoration: underline;
+
+  @media (orientation: portrait) {
+    padding: 1rem;
+    margin-left: 0;
+    border: none;
+    // box-shadow: rgba(0, 0, 0, 0.1) 4px 4px;
+    // text-shadow: rgba(0, 0, 0, 0.1) 4px 4px;
+  }
 }
 
 </style>

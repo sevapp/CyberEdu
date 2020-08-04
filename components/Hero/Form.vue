@@ -180,8 +180,9 @@ export default {
 }
 
 .Form {
-  max-width: 25rem;
-  padding: 1rem;
+  // max-width: 25rem;
+  width: auto;
+  // padding: 1rem;
   text-align: left;
   background-color: #ffffff;
   // min-height: 100vh;
@@ -189,9 +190,11 @@ export default {
   // justify-content: center;
   // align-items: center;
   // flex-direction: column;
+  padding: 1rem 1rem 1rem 1rem;
 
   @media (orientation: portrait) {
 		min-width: 100%;
+    //padding: 1rem 1rem 1rem 1rem;
     background-color: #eeeeee;
 	}
 }

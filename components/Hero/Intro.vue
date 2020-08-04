@@ -36,7 +36,7 @@ export default {
     generateStrings() {
       function gen(str, max_len) {
         let symbols = 'AaBbCcDdEeFf0123456789@#$%&XxYyZz';
-        let without = '<>/l /WT'
+        let without = '<>/l /WT_'
 		    let out = [];
 		    let lens = [];
 		    
@@ -55,7 +55,12 @@ export default {
           }
 		        
           out.push(cur_str);
-		    }
+        }
+        
+        for (let i in out) {
+          out[i].replace(/ /gi, "&nbsp;");
+          console.log(out[i]);
+        }
 		    
 		    return out;
       }
@@ -93,12 +98,12 @@ export default {
 <style lang="scss" module>
 .Title {
 	margin: 0 4rem 0 0;
-	width: 40%;
+	// width: 40%;
 	min-height: 26rem;
 	display: flex;
 	justify-content: center;
   align-items: center;
-  padding: 1rem;
+  // padding: 1rem;
 	text-align: left;
   font-size: 4.5rem;
   // hyphens: auto;
@@ -113,9 +118,9 @@ export default {
   // word-break: break-all;
 
 	@media (orientation: portrait) {
-		margin: 1rem 0 1rem 0;
+		margin: 1rem 1rem 1rem 1rem;
     font-size: 2.6rem;
-    min-width: 100%;
+    //min-width: 100%;
     min-height: 28rem;
     // text-align: center;
 	}
@@ -124,7 +129,7 @@ export default {
 .box {
   font-family: 'Rubik Mono One', sans-serif;
   word-spacing: -30px;
-  letter-spacing: -3px;
+  letter-spacing: 0px;
   @media (orientation: portrait) {
     word-spacing: -15px;
   }

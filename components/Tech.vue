@@ -38,20 +38,23 @@
       <div class="column is-half is-offset-1">
         <div :class="$style.text">
           <b-tag size="is-large">JavaScript</b-tag>
-          <b-tag size="is-large">Canvas</b-tag>
           <b-tag size="is-large">Git</b-tag>
           <b-tag size="is-large">Lua</b-tag>
           <b-tag size="is-large">HTML</b-tag>
           <b-tag size="is-large">C</b-tag>
           <b-tag size="is-large">Make</b-tag>
-          <b-tag size="is-large">Nodejs</b-tag>
+          <b-tag size="is-large">Node.js</b-tag>
           <b-tag size="is-large">Bash</b-tag>
           <b-tag size="is-large">CSS</b-tag>
+          <b-tag size="is-large">Bootstrap</b-tag>
           <b-tag size="is-large">C#</b-tag>
+          <b-tag size="is-large">Three.js</b-tag>
           <b-tag size="is-large">Bash</b-tag>
           <b-tag size="is-large">Vue / Nuxt</b-tag>
+          <b-tag size="is-large">React / Next</b-tag>
           <b-tag size="is-large">Python</b-tag>
           <b-tag size="is-large">WebGL</b-tag>
+          <b-tag size="is-large">Docker</b-tag>
         </div>
       </div>
     </div>

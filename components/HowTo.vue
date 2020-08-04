@@ -80,7 +80,7 @@
   // word-break: break-all;
 
 	@media (orientation: portrait) {
-		margin: 4rem 1rem 1rem 1rem;
+		margin: 0rem 1rem 1rem 1rem;
     font-size: 2.6rem;
     text-align: left;
     // min-width: 100%;

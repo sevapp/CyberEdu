@@ -20,7 +20,7 @@
 
 .section {
   min-height: 100vh;
-  max-height: 100vh;
+  // max-height: 100vh;
   max-width: 100%;
   display: flex;
   // justify-content: center;

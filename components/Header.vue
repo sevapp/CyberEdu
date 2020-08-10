@@ -6,7 +6,6 @@
       </div> -->
       <div class="column is-offset-1" :class="$style.header">
         <img
-          v-if="$device.isDesktopOrTablet"
           :class="$style.logo" 
           width="32px" 
           src="~/static/favicons/icon.svg">
@@ -45,7 +44,7 @@
   margin-right: 1rem;
 
   @media (orientation: portrait) {
-    display: none;
+    //display: none;
   }
 }
 

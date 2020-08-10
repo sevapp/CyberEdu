@@ -130,10 +130,13 @@
 }
 
 .text {
-  margin: 0rem 1rem 1rem 1rem;
+  margin: 0rem 1rem 0rem 1rem;
   font-size: 2.5rem;
   text-align: left;
-  margin-left: 0;
+
+  @media (orientation: portrait) {
+    margin: 0rem 1rem 1rem 1rem;
+  }
 }
 
 </style>

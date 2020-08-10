@@ -26,7 +26,7 @@
             <br>
             <li>
               <l>#3</l>
-              Занятия про&shy;ходят уда&shy;ленно с помощью <a><T><u>Discord</u></T></a> и сер&shy;виса для сов&shy;мест&shy;ного редакти&shy;рования кода <a><T><u>Repl.it</u></T></a>
+              Занятия про&shy;ходят уда&shy;ленно с помощью <a href="https://discord.com/"><T><u>Discord</u></T></a> и сер&shy;виса для сов&shy;мест&shy;ного редакти&shy;рования кода <a href="https://repl.it/"><T><u>Repl.it</u></T></a>
             </li>
             <br>
             <li>

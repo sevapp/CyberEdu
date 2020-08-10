@@ -3,6 +3,7 @@
 $yellow: #ffdd57;
 $telegram: #209cee;
 $whatsapp: #23d160;
+$dicord: #8b00ff;
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -23,6 +24,11 @@ T {
 W {
   color: $whatsapp;
 }
+
+D {
+  color: $dicord;
+}
+
 
 $link: $yellow;
 $input-focus-border-color: $yellow;

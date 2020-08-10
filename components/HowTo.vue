@@ -11,7 +11,7 @@
     </div>
 
     <div class="columns">
-      <div class="column is-three-quarters is-offset-1">
+      <div class="column is-half is-offset-1">
         <div :class="$style.text">
           <ul>
             <li>
@@ -21,12 +21,12 @@
             <br>
             <li>
               <l>#2</l>
-              Оплата проис&shy;ходит после окончания занятия, стомость занятия рассчи&shy;тывается индиви&shy;дульно (в среднем 1-1,5 тыс. руб)
+              Оплата проис&shy;ходит после окончания занятия, стомость занятия рассчи&shy;тывается индиви&shy;дульно (в среднем <l>1-1,5 тыс. руб</l>)
             </li>
             <br>
             <li>
               <l>#3</l>
-              Занятия про&shy;ходят уда&shy;ленно с помощью <u><a>Discord</a></u> и сер&shy;виса для сов&shy;мест&shy;ного редакти&shy;рования код <u><a>Repl.it</a></u>
+              Занятия про&shy;ходят уда&shy;ленно с помощью <a><D>Discord</D></a> и сер&shy;виса для сов&shy;мест&shy;ного редакти&shy;рования кода <a><T>Repl.it</T></a>
             </li>
             <br>
             <li>
@@ -64,7 +64,7 @@
   // }
   
   padding-top: 5.5rem;
-  padding-bottom: 5.5rem;
+  padding-bottom: 1.5rem;
 
   background: none;
 

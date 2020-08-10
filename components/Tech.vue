@@ -81,7 +81,7 @@
   
   // padding: 3rem;
   padding-top: 5.5rem;
-  padding-bottom: 5.5rem;
+  padding-bottom: 1.5rem;
   background: #ffdd57;
 
   @media (orientation: portrait) {
@@ -130,9 +130,10 @@
 }
 
 .text {
-  margin: 1rem 1rem 1rem 1rem;
+  margin: 0rem 1rem 1rem 1rem;
   font-size: 2.5rem;
   text-align: left;
+  margin-left: 0;
 }
 
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div :class="$style.content">
+    <Footer />
     <Hero />
     <Tech />
     <HowTo />
-    <Footer />
   </div>
 </template>
 

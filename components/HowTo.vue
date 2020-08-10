@@ -26,7 +26,7 @@
             <br>
             <li>
               <l>#3</l>
-              Занятия про&shy;ходят уда&shy;ленно с помощью <a><D>Discord</D></a> и сер&shy;виса для сов&shy;мест&shy;ного редакти&shy;рования кода <a><T>Repl.it</T></a>
+              Занятия про&shy;ходят уда&shy;ленно с помощью <a><T><u>Discord</u></T></a> и сер&shy;виса для сов&shy;мест&shy;ного редакти&shy;рования кода <a><T><u>Repl.it</u></T></a>
             </li>
             <br>
             <li>
@@ -141,7 +141,7 @@ li {
   @media (orientation: portrait) {
     padding: 1rem;
     margin-left: 0;
-    border: none;
+    // border: none;
     // box-shadow: rgba(0, 0, 0, 0.1) 4px 4px;
     // text-shadow: rgba(0, 0, 0, 0.1) 4px 4px;
   }

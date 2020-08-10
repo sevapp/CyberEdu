@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.content">
-    <Footer />
+    <Header />
     <Hero />
     <Tech />
     <HowTo />

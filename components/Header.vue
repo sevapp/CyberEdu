@@ -43,6 +43,10 @@
 
 .logo {
   margin-right: 1rem;
+
+  @media (orientation: portrait) {
+    display: none;
+  }
 }
 
 .Title {
@@ -52,7 +56,7 @@
   user-select: none;
 
 	@media (orientation: portrait) {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: left;
 	}
 }

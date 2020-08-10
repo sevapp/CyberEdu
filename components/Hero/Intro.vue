@@ -57,10 +57,10 @@ export default {
           out.push(cur_str);
         }
         
-        for (let i in out) {
-          out[i].replace(/ /gi, "&nbsp;");
-          console.log(out[i]);
-        }
+        // for (let i in out) {
+        //   out[i].replace(/ /gi, "&nbsp;");
+        //   console.log(out[i]);
+        // }
 		    
 		    return out;
       }
@@ -118,7 +118,7 @@ export default {
   // word-break: break-all;
 
 	@media (orientation: portrait) {
-		margin: 1rem 1rem 1rem 1rem;
+		margin: 3rem 1rem 1rem 1rem;
     font-size: 2.6rem;
     //min-width: 100%;
     min-height: 28rem;

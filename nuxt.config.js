@@ -67,7 +67,7 @@ export default {
     [
       '@nuxtjs/yandex-metrika',
       {
-        id: 'XXXXXX',
+        id: '66342778',
         webvisor: true,
         // clickmap: true,
         // useCDN: false,
@@ -86,7 +86,7 @@ export default {
 
   recaptcha: {
     hideBadge: false,                   // Hide badge element (v3 & v2 via size=invisible)
-    language: 'en',                     // Recaptcha language (v2)
+    language: 'ru',                     // Recaptcha language (v2)
     siteKey: process.env.CAPCHA_PUB,    // Site key for requests
     version: 3,                         // Version
     size: 'compact'                     // Size: 'compact', 'normal', 'invisible' (v2)

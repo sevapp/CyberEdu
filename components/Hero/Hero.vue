@@ -1,9 +1,4 @@
 <template>
-  <!-- <div :class="$style.section">
-    <Form />
-    <Intro />
-  </div> -->
-
   <div :class="$style.section">
     <div class="columns" :class="$style.row">
       <div class="column is-6 is-offset-1">

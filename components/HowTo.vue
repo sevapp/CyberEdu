@@ -64,7 +64,7 @@
   // }
   
   padding-top: 5.5rem;
-  padding-bottom: 1.5rem;
+  // padding-bottom: 1.5rem;
 
   background: none;
 

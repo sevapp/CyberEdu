@@ -30,6 +30,8 @@ export default {
       { name: 'theme-color', content: '#ffdd57' },
     ],
 
+    // <script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8"></script>
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicons/icon16x16.ico' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/icon32x32.png' },
@@ -40,7 +42,7 @@ export default {
     ],
 
     script: [
-      {src: '//cdn.callibri.ru/callibri.js', type: 'text/javascript', charset: "utf-8"},
+      {src: '//code.jivosite.com/widget/ePVXakYxO8'},
     ],
   },
 

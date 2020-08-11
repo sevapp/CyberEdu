@@ -38,6 +38,10 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap' }
     ],
+
+    script: [
+      {src: '//cdn.callibri.ru/callibri.js', type: 'text/javascript', charset: "utf-8"},
+    ],
   },
 
   /*

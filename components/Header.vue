@@ -61,11 +61,12 @@
 }
 
 .box {
-  font-family: 'Rubik Mono One', sans-serif;
-  word-spacing: -10px;
-  letter-spacing: 0px;
+  // font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'Russo One', sans-serif;
+  // word-spacing: -10px;
+  // letter-spacing: 0px;
   @media (orientation: portrait) {
-    word-spacing: -10px;
+    // word-spacing: -10px;
   }
 }
 

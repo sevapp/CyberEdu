@@ -28,7 +28,7 @@
       <div class="column is-three-fifths is-offset-1">
         <div class="" :class="$style.Title">
           <samp :class="$style.box">
-            Что ты можешь изучить с нами?
+            &lt;Что ты можешь изучить с нами?&gt;
           </samp>
         </div>
       </div>
@@ -121,16 +121,17 @@
 }
 
 .box {
-  font-family: 'Rubik Mono One', sans-serif;
-  word-spacing: -30px;
-  letter-spacing: 0px;
+  // font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'Russo One', sans-serif;
+  //word-spacing: -30px;
+  //letter-spacing: 0px;
   @media (orientation: portrait) {
-    word-spacing: -15px;
+    //word-spacing: -15px;
   }
 }
 
 .text {
-  margin: 0rem 1rem 0rem 1rem;
+  margin: 0rem 0rem 1rem;
   font-size: 2.5rem;
   text-align: left;
 

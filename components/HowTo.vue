@@ -4,7 +4,7 @@
       <div class="column is-three-fifths is-offset-1">
         <div class="" :class="$style.Title">
           <samp :class="$style.box">
-            Как мы работаем?
+            &lt;Как мы работаем?&gt;
           </samp>
         </div>
       </div>
@@ -21,7 +21,7 @@
             <br>
             <li>
               <l>#2</l>
-              Оплата проис&shy;ходит после окончания занятия, стомость занятия рассчи&shy;тывается индиви&shy;дульно (в среднем <l>1-1,5 тыс. руб</l>)
+              Оплата проис&shy;ходит после окончания занятия, стомость занятия рассчи&shy;тывается индиви&shy;дульно <br>(в среднем <l>1-1,5 тыс. руб</l>)
             </li>
             <br>
             <li>
@@ -72,11 +72,12 @@
 }
 
 .box {
-  font-family: 'Rubik Mono One', sans-serif;
-  word-spacing: -30px;
-  letter-spacing: 0px;
+  // font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'Russo One', sans-serif;
+  //word-spacing: -30px;
+  //letter-spacing: 0px;
   @media (orientation: portrait) {
-    word-spacing: -15px;
+    //word-spacing: -15px;
   }
 }
 
@@ -85,9 +86,10 @@
   margin: 1rem 1rem 1rem 1rem;
   font-size: 2.5rem;
   text-align: left;
-  font-family: 'Rubik Mono One', sans-serif;
-  word-spacing: -10px;
-  letter-spacing: 0px;
+  // font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'Russo One', sans-serif;
+  // word-spacing: -10px;
+  // letter-spacing: 0px;
 
   @media (orientation: portrait) {
     font-size: 1.5rem;

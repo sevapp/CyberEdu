@@ -23,7 +23,6 @@
 
 .section {
   position: fixed;
-  max-height: 3.5rem;
   z-index: 100;
   width: 100%;
   // min-height: 10vh;

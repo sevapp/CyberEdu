@@ -41,7 +41,10 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap' }
     ],
-
+    
+    /*
+    <script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?168",t.onload=function(){VK.Retargeting.Init("VK-RTRG-516590-4QYKt"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-516590-4QYKt" style="position:fixed; left:-999px;" alt=""/></noscript>
+    */
     script: [
       {src: '//code.jivosite.com/widget/ePVXakYxO8'},
     ],

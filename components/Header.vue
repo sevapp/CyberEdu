@@ -7,7 +7,8 @@
       <div class="column is-offset-1" :class="$style.header">
         <img
           :class="$style.logo" 
-          width="32px" 
+          width="32px"
+          height="32px"
           src="~/static/favicons/icon.svg">
         <div class="" :class="$style.Title">
           <samp :class="$style.box">
@@ -23,7 +24,7 @@
 
 .section {
   position: fixed;
-  max-height: 3.5rem;
+  max-height: 3.3rem;
   z-index: 100;
   width: 100%;
   // min-height: 10vh;
@@ -35,6 +36,7 @@
 
 .header {
   display: flex;
+  align-items: center;
 
   @media (orientation: portrait) {
     margin: 0rem 1rem 0rem 1rem;

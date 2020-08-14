@@ -28,6 +28,7 @@ export default {
       { hid: 'description', name: 'description', content: 'CyberEdu' },
       { name: 'msapplication-TileColor', content: '#ffdd57' },
       { name: 'theme-color', content: '#ffdd57' },
+      { name: 'yandex-verification', content: '546d6ac3c426b14b' },
     ],
 
     // <script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8"></script>
